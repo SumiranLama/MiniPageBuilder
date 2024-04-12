@@ -1,0 +1,22 @@
+.blocks{
+    color: white;
+}
+
+.elements{
+    color: black;
+}
+
+.elements > div{
+    border: 2px solid black; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.draggable {
+    cursor: grab; /* Indicates the element can be grabbed */
+  }
+  

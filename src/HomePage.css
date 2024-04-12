@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    height: 100vh; /* Use 100% of the viewport height */
+  }
+  
+  .pagebar {
+    width: 80%; 
+    display: flex;
+    /* align-items: center; 
+    justify-content: center;  */
+    border-right: 2px solid black; /* Adding a dividing line between the two halves */
+  }
+  .sidebar{
+    width: 20%;
+    background-color: black;
+  }
+
+  .dropped-content{
+    border: 2px solid black; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 22px;
+    width: 224px; 
+    
+    background-color: #f9f9f9; /* Light background color */
+  }
+  
+  
+  /* Optional: Add more styling here */
+  
