@@ -20,9 +20,10 @@ const HomePage = () => {
 
     const handleFormSubmit = (formData) => {
         // Add the form data to pageBarContent
-        console.log('Form Data received at Home Page:', formData);
+        console.log('Form Data received at Home Page formSubmit:', formData);
+        console.log('pageBarContent:', pageBarContent);
         const newContent = {
-            id: formData.ID,
+            ID: formData.ID ? formData.ID : pageBarContent.length,
             text: formData.text,
             x: formData.x,
             y: formData.y,
@@ -32,6 +33,8 @@ const HomePage = () => {
         };
         // console.log(newContent);
         // console.log('pageBarContent:', pageBarContent);
+        // const result = pageBarContent.map((content, index) => index === newContent.ID);
+        // console.log("Result is :",result);
         setPageBarContent(prevContent => [...prevContent, newContent]);
     };
 
@@ -39,7 +42,7 @@ const HomePage = () => {
         const index = parseInt(ID.match(/\d+$/)[0], 10); // Extract the numeric part at the end of the ID
         // const index = ID.split('-')[1];
         const elementData = pageBarContent[index];
-        console.log("Element selected:", elementData);
+        console.log("Element selected at handlSelect:", elementData);
         
             setSelectedElementData({
                 ...elementData,
@@ -65,8 +68,8 @@ const HomePage = () => {
     }
 
     useEffect(() => {
-        console.log("Tempcontent:",tempContent);
-        console.log('pageBarContent:', pageBarContent);
+        // console.log("Tempcontent:",tempContent);
+        // console.log('pageBarContent:', pageBarContent);
     }, [pageBarContent,tempContent]);
 
     const handleDragOver = (e) => {

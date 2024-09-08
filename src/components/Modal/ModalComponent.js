@@ -12,15 +12,12 @@ const ModalComponent = ({ isOpen, onClose, coordinates, onFormSubmit, elementDat
     const [inputX, setInputX] = useState("");
     const [inputY, setInputY] = useState("");  
 
-    console.log("The element data ID is :",elementData);
-    // console.log("The element data X is  :",elementData.x);
-
     useEffect(() => {
-        console.log("Element Data:", elementData);
+        // console.log("Element Data:", elementData);
         if (isOpen && elementData) {
-            console.log("Setting FormData with elementData:", elementData);
+            console.log("Setting FormData with elementData in modal useEffect:", elementData);
             setFormData({
-                ID: elementData.id || '',
+                // ID: elementData.id || '',
                 text: elementData.text || '',
                 x: elementData.x,
                 y: elementData.y,
@@ -32,7 +29,6 @@ const ModalComponent = ({ isOpen, onClose, coordinates, onFormSubmit, elementDat
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        // formData.x ? formData.x : coordinates.x
         
         if (name === "X") {
             setInputX(value);
@@ -42,8 +38,8 @@ const ModalComponent = ({ isOpen, onClose, coordinates, onFormSubmit, elementDat
         }
         // console.log(inputX);
 
-        console.log("X being set in handleINput Change");
-        console.log("For ",name," the Value is :",value);
+        // console.log("X being set in handleINput Change");
+        // console.log("For ",name," the Value is :",value);
         setFormData({
           ...formData,
           [name]: value
@@ -53,8 +49,7 @@ const ModalComponent = ({ isOpen, onClose, coordinates, onFormSubmit, elementDat
     if (!isOpen) return null;
 
     const handleSubmit = () => {
-        console.log("handlesubmit called");
-        console.log("the form data is :",formData);
+        console.log("the form data at handlesubmit of modal :",formData);
         onFormSubmit({
             ...formData,
             x: inputX ? inputX : formData.x ? formData.x : coordinates.x,
